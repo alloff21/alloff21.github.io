@@ -21,15 +21,15 @@
   				<input type="text" id="scndnmbr">
 			</p>
 			<p>
-  			<button id="btnid" type="button" pys-onClick="runRND">Ok</button>
+  			<button id="btnid" type="button" pys-onClick="runRND('frstnmbr', 'scndnmbr')">Ok</button>
 			</p>
 		</form>
   	</p></b>
     <b><p>Рандомное число: <u><label id='rndnmbr'></label></u></p></b>
     <py-script>
     	from rnd import generate_random_number
-    	def runRND(*args):
-      		pyscript.write('rndnmbr', generate_random_number(int(frstnmbr), int(scndnmbr)))    
+    	def runRND(a,b):
+      		pyscript.write('rndnmbr', generate_random_number(int(a), int(b)))    
      </py-script>
   </body>
 </html>
