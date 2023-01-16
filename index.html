@@ -10,21 +10,20 @@
     </head>
 
   <body>
-  	<b><p>
-  		<form>
-  			<p>
-				<label for="name">Введите начальное число: </label>
-				<input type="text" id="frstnmbr">
-			</p>
-			<p>
-  				<label for="name">Введите последнее число: </label>
-  				<input type="text" id="scndnmbr">
-			</p>
-			<p>
-  			<button id="btnid" type="button" pys-onClick="runRND('frstnmbr', 'scndnmbr')"> Rundomize </button>
-			</p>
-		</form>
-  	</p></b>
+	 <form action="" method="get" class="randomizer">
+  		<div class="randomizer">
+    			<label for="name">Enter first number: </label>
+    			<input type="text" name="first" id="frstnmbr" required>
+  		</div>
+ 		<div class="randomizer">
+    			<label for="email">Enter second number: </label>
+    			<input type="text" name="second" id="scndnmbr" required>
+  		</div>
+  		<div class="randomizer">
+   			<button id="btnid" type="button" pys-onClick="runRND('frstnmbr', 'scndnmbr')"> Rundomize </button>
+  		</div>
+	</form>
+
     <b><p>Рандомное число: <u><label id='rndnmbr'></label></u></p></b>
     <py-script>
     	from rnd import generate_random_number
