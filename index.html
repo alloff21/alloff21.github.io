@@ -21,7 +21,7 @@
   				<input type="text" id="scndnmbr">
 			</p>
 			<p>
-  			<button id="btnid" type="button" pys-onClick="runRND('frstnmbr', 'scndnmbr')">Ok</button>
+  			<button id="btnid" type="button" pys-onClick="runRND('frstnmbr', 'scndnmbr')"> Rundomize </button>
 			</p>
 		</form>
   	</p></b>
@@ -29,7 +29,7 @@
     <py-script>
     	from rnd import generate_random_number
     	def runRND(a,b):
-      		pyscript.write('rndnmbr', generate_random_number(a, b))    
+      		pyscript.write('btnid', generate_random_number(a, b))    
      </py-script>
   </body>
 </html>
