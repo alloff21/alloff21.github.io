@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+      <py-env>
+        - paths:
+          - /rnd.py
+      </py-env>
+    </head>
+
+  <body>
+  	<b><p>
+  		<form>
+  			<label for="name">Введите начальное число: </label>
+  			<input type="text" id="frstnmbr">
+  			<label for="name">Введите последнее число: </label>
+  			<input type="text" id="scndnmbr">
+  			<button id="btnid" type="button" pys-onClick="runRND">Ok</button>
+		</form>
+  	</p></b>
+    <b><p>Рандомное число: <u><label id='rndnmbr'></label></u></p></b>
+    <py-script>
+    	def runRND
+			from rnd import generate_random_number
+      		pyscript.write('rndnmbr', generate_random_number(frstnmbr, scndnmbr))    
+     </py-script>
+  </body>
+</html>
