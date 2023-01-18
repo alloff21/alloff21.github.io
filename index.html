@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-      <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-      <py-env>
-        - paths:
-          - /rnd.py
-      </py-env>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <title> Rundomizer </title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
     </head>
 
   <body>
 	 <form action="" method="get" class="randomizer">
   		<div class="randomizer">
-    			<label for="name">Enter first number: </label>
+    			<label for="name">Введите начальное число: </label>
     			<input type="text" name="first" id="frstnmbr" required>
   		</div>
  		<div class="randomizer">
-    			<label for="email">Enter second number: </label>
+    			<label for="email">Введите конец диапозона: </label>
     			<input type="text" name="second" id="scndnmbr" required>
   		</div>
-  		<div class="randomizer">
-   			<button id="btnid" type="button" pys-onClick="runRND('frstnmbr', 'scndnmbr')"> Rundomize </button>
-  		</div>
 	</form>
+ 	
+	<div>
+   		<button id="btnid" type="button" onClick="runRND()"> Нажми! </button>
+  	</div>
 
-    <b><p>Рандомное число: <u><label id='rndnmbr'></label></u></p></b>
-    <py-script>
-    	from rnd import generate_random_number
-    	def runRND(a,b):
-      		pyscript.write('rndnmbr', generate_random_number(a, b))    
-     </py-script>
+
+    <b>Рандомное число: <div id='rndnmbr'></div></b>
+	
+	<script>
+		function runRND() {
+			var frst = document.getElementById("frstnmbr").value;
+			var scnd = document.getElementById("scndnmbr").value;
+			var rnd = Math.floor(Math.random() * (scnd - frst + 1) ) + Math.floor(frst);
+			document.getElementById("rndnmbr").innerHTML = rnd;
+		}
+	
+	
+	</script>
+	
+	
+
   </body>
 </html>
+
